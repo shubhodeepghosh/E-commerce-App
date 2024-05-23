@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  @apply min-h-screen flex flex-col;
+}
+
+/* ======================
+      Loading Page
+======================= */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid #514b82;
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+
+@keyframes l20-1 {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)
+  }
+
+  12.5% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  62.5% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%)
+  }
+}
+
+@keyframes l20-2 {
+  0% {
+    transform: scaleY(1) rotate(0deg)
+  }
+
+  49.99% {
+    transform: scaleY(1) rotate(135deg)
+  }
+
+  50% {
+    transform: scaleY(-1) rotate(0deg)
+  }
+
+  100% {
+    transform: scaleY(-1) rotate(-135deg)
+  }
+}
+
+/* ======================
+      Home Page
+======================= */
+#banner {
+  background: url("../../public/assets/banner.jpg") no-repeat;
+  background-size: cover;
+  @apply bg-center lg:h-[800px] h-[450px];
+}
+
+.product-container {
+  @apply flex flex-wrap gap-10 justify-center items-center mb-20;
+}
+
+.product-card {
+  @apply w-64 lg:w-[340px] p-3 h-full cursor-pointer hover:scale-95 transition-all bg-purple-100 rounded-xl shadow-md;
+}
+
+.common-btn {
+  @apply bg-purple-600 text-white px-4 py-2 lg:px-6 lg:py-3 rounded-md font-medium lg:text-base text-sm;
+}
